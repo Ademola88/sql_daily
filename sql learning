@@ -1,0 +1,89 @@
+CREATE TABLE tblEmployee
+(
+EmployeeNumber INT NOT NULL,
+EmployeeFirstName VARCHAR(50) NOT NULL,
+EmployeeMiddleName VARCHAR(50) NULL,
+EmployeeLastName VARCHAR(50) NOT NULL,
+EmployeeGovernmentID CHAR(10) NULL,
+DateOfBirth DATE NOT NULL
+)
+
+ALTER TABLE tblEmployee
+ADD Department VARCHAR(10)
+
+SELECT * FROM tblEmployee
+
+INSERT INTO tblEmployee
+VALUES (132, 'Dylan', 'A',	'Word',	'HN513777D', '19920914', 'Customer Relations')
+
+ALTER TABLE tblEmployee
+ALTER COLUMN Department VARCHAR(20)
+
+SELECT * from tblEmployee
+where [EmployeeLastName] = 'word'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] <> 'word'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] >= 'word'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] = 'word'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] like 'w%'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] like '%w'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] like '%w%'
+
+SELECT * from tblEmployee
+where [EmployeeLastName] like '_w%'
+
+SELECT * from tblEmployee
+where EmployeeNumber > 200
+
+SELECT * from tblEmployee
+where EmployeeNumber <= 200
+
+SELECT * from tblEmployee
+where not EmployeeNumber > 200
+
+   
+SELECT * from tblEmployee
+where EmployeeNumber >= 200 and EmployeeNumber <= 209
+
+SELECT * from tblEmployee
+where not (EmployeeNumber >= 200 and EmployeeNumber <= 209)
+
+SELECT * from tblEmployee
+where EmployeeNumber >= 200 or EmployeeNumber <= 209
+
+SELECT * from tblEmployee
+where EmployeeNumber  between 200 and 209
+
+SELECT * from tblEmployee
+where EmployeeNumber not between 200 and 209
+
+select * from tblEmployee
+where EmployeeNumber in (200, 204, 208)
+
+select * from tblEmployee
+where DateOfBirth between '19760101' and '19861231'
+
+select * from tblEmployee
+where DateOfBirth >= '19760101' and DateOfBirth < '19870101'
+
+ SELECT year(DateOfBirth) as YearOfDateOfBirth, count(*) as NumberBorn
+FROM tblEmployee
+GROUP BY year(DateOfBirth)
+
+SELECT * FROM tblEmployee
+where year(DateOfBirth) = 1967
+
+
+
+
